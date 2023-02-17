@@ -1,7 +1,7 @@
 # PRESENTACIÓN
-Nombre del proyecto: Panoramic
-Nombre del grupo: PontiDevs
- Grupo 1
+Nombre del proyecto: Panoramic <br />
+Nombre del grupo: PontiDevs <br />
+ Grupo 1 <br />
 
 ### INTEGRANTES ✒️
 - Martin Zhaohong Chen He [MartinCHz] <br />
