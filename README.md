@@ -6,7 +6,7 @@ Nombre del grupo: PontiDevs <br />
 ### INTEGRANTES ✒️
 - Martin Zhaohong Chen He [MartinCHz] <br />
 - David Mateo Henao Prieto [] <br />
-- Santiago Gallo Jaimes [] <br />
+- Santiago Gallo Jaimes [KironStylo] <br />
 - David Alejandro Sequera Lievano [] <br />
 
 ### ESPECIFICACIÓN DEL REPOSITORIO
