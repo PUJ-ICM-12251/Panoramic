@@ -17,3 +17,6 @@ https://github.com/PUJ-ICM-12251/Panoramic.git
 
 ### LINK DE LA WIKI
 https://github.com/PUJ-ICM-12251/Panoramic/wiki/Panoramic-Wiki
+
+### LINK DEL DISEÑO DE UI
+https://www.figma.com/proto/JVGq7surGIFE6eHKR8eIZ9/Panoramic?node-id=19%3A15&scaling=scale-down&page-id=0%3A1&starting-point-node-id=27%3A467
