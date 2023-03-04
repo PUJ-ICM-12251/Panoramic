@@ -14,3 +14,6 @@ En este repositorio se subirán todos las entregas que serán exigidas en el cur
 
 ### LINK DEL REPOSITORIO
 https://github.com/PUJ-ICM-12251/Panoramic.git
+
+### LINK DE LA WIKI
+https://github.com/PUJ-ICM-12251/Panoramic/wiki/Panoramic-Wiki
