@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Panoramic</string>
+    <string name="LoginP">Inicio de sesión</string>
+    <string name="Logins">Inicie sesión con su cuenta de Panoramic</string>
+    <string name="Email">E-mail</string>
+    <string name="text_hint1">micorreo@panoramic.com</string>
+    <string name="text_hint2">Introduce tu contraseña</string>
+    <string name="text_hint3">Tu nombre</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="text_boton1">Iniciar sesión</string>
+    <string name="text_boton2">Registrarse</string>
+    <string name="register">¿No tienes cuenta?Registrate Aqui</string>
+    <string name="Registro">Registro</string>
+    <string name="Descr">Ingresa los siguientes datos</string>
+    <string name="name">Nombre</string>
+</resources>

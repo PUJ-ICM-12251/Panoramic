@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#323030">
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#F24B4B"
+        android:text="ðŸ˜ "
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#F24B4B"
+        android:text="ðŸ˜ "
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#F24B4B"
+        android:text="ðŸ˜ "
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Review"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <TextView
+        android:id="@+id/restaurantText"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Andres Carne de res"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.264" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#F24B4B"
+        android:text="ðŸ˜ "
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452" />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#F24B4B"
+        android:text="ðŸ˜ "
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#F24B4B"
+        android:text="ðŸ˜ "
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452"
+
+        />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="325dp"
+        android:layout_height="66dp"
+        android:backgroundTint="#1635DA"
+        android:text="La musica ese dia estaba ..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.927" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="325dp"
+        android:layout_height="66dp"
+        android:backgroundTint="#F2874B"
+        android:text="Probamos las entradas de ..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

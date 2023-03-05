@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#302C2C"
+    tools:context=".VerDetalles"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/txtNombre"
+        android:text="Nombre"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_below="@id/txtNombre"
+        android:id="@+id/txtNombreEmp"
+        android:text="Nombre del establecimiento"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_below="@id/txtNombreEmp"
+        android:id="@+id/txtDireccion"
+        android:text="Direccion"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_below="@id/txtNombreEmp"
+        android:id="@+id/txtDireccionEmp"
+        android:text="Direccion del lugar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:layout_below="@id/txtDireccionEmp"
+        android:id="@+id/txtHorario"
+        android:text="Horario"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/txtHorario"
+        android:id="@+id/txtHorarioEmp"
+        android:text="Horario del lugar"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_below="@id/txtHorarioEmp"
+        android:id="@+id/txtTelefono"
+        android:text="Telefono"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_below="@id/txtTelefono"
+        android:id="@+id/txtTelefonoEmp"
+        android:text="Telefono del lugar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
+
+
+</RelativeLayout>

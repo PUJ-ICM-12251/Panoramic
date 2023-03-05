@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/relative_container" xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="#1C1B1B">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:srcCompat="@drawable/picture" />
+
+    <TextView
+        android:id="@+id/loginM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LoginP"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="74dp"
+        android:layout_below="@id/imageView"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/LoginS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Logins"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="74dp"
+        android:layout_below="@id/loginM"
+        android:textColor="#FFFFFF"/>
+
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LoginS"
+        android:layout_marginTop="33dp"
+        android:text="@string/Email"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="74dp"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_hint1"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:layout_below="@id/email"
+        android:background="#D9D9D9"
+        android:padding="7dip"/>
+
+
+    <TextView
+        android:id="@+id/text_contra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_marginTop="46dp"
+        android:text="@string/contrasena"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="74dp"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/contrasenaCampo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_hint2"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:layout_below="@id/text_contra"
+        android:background="#D9D9D9"
+        android:padding="7dip"
+        />
+
+
+    <Button
+        android:id="@+id/boton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contrasenaCampo"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#930202"
+        android:text="@string/text_boton1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/boton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/boton1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#1C1B1B"
+        android:text="@string/register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+</RelativeLayout>
