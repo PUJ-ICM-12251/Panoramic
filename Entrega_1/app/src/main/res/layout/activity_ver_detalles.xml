@@ -25,25 +25,25 @@
                 android:layout_marginRight="5dp"
                 android:alpha="0.75"
                 android:background="@drawable/rounded_corner"
-                android:textColor="#ffffff"
-                android:text="Regresar"></androidx.appcompat.widget.AppCompatButton>
+                android:textColor="@color/white"
+                android:text="Regresar" />
+
             <ImageView
                 android:id="@+id/imagenLugar"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_alignParentTop="true"
                 android:src="@drawable/andres"
-                android:scaleType="fitXY"
-                >
-            </ImageView>
+                android:scaleType="fitXY" />
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/Relative2"
             android:layout_below="@id/Relative1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#232323"
+            android:background="@color/dark_grey"
             >
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
@@ -53,8 +53,8 @@
                 android:text="Nombre"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_below="@id/txtNombre"
                 android:layout_marginTop="20dp"
@@ -65,8 +65,8 @@
                 android:text="Andres Carne de Res"
                 android:textSize="20sp"
                 android:textStyle="normal"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
@@ -74,11 +74,11 @@
                 android:layout_below="@id/nombreLugar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dirección"
+                android:text="@string/direcci_n"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_below="@id/txtDireccion"
                 android:layout_marginTop="20dp"
@@ -89,8 +89,8 @@
                 android:text="Cl. 82 #12 -21, Bogotá"
                 android:textSize="20sp"
                 android:textStyle="normal"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
@@ -98,11 +98,11 @@
                 android:layout_below="@id/direccionLugar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Puntuación"
+                android:text="@string/puntuaci_n"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_below="@id/txtPuntuacion"
                 android:layout_marginTop="20dp"
@@ -113,8 +113,8 @@
                 android:text="4,4 estrellas"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="#D59806"
-                ></TextView>
+                android:textColor="@color/baby_yellow" />
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
@@ -122,11 +122,11 @@
                 android:layout_below="@id/puntuacionLugar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tipo de establecimiento"
+                android:text="@string/tipo_de_establecimiento"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_below="@id/txtTipo"
                 android:layout_marginTop="20dp"
@@ -137,8 +137,8 @@
                 android:text="Restaurante Take Out Dine in"
                 android:textSize="20sp"
                 android:textStyle="normal"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
@@ -147,10 +147,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Horario"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white"/>
             <RelativeLayout
                 android:layout_below="@id/txtHorario"
                 android:id="@+id/Relative3"
@@ -160,6 +159,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="40dp"
                 >
+
                 <TextView
                     android:id="@+id/txtAbre"
                     android:layout_width="wrap_content"
@@ -167,8 +167,9 @@
                     android:text="Abre 12:00 PM"
                     android:textSize="20sp"
                     android:layout_marginRight="40dp"
-                    android:textColor="#ffffff"
-                    ></TextView>
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
+
                 <TextView
                     android:paddingRight="20dp"
                     android:id="@+id/txtCierra"
@@ -177,9 +178,10 @@
                     android:layout_height="wrap_content"
                     android:text="Cierra 3:00 AM"
                     android:textSize="20sp"
-                    android:textColor="#ffffff"
-                    ></TextView>
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
             </RelativeLayout>
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
@@ -187,22 +189,21 @@
                 android:id="@+id/txtTelefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Telefono"
+                android:text="@string/telefono"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
+
             <TextView
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:id="@+id/telefonoLugar"
                 android:layout_below="@id/txtTelefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3153559096"
                 android:textSize="20sp"
-                android:textColor="#ffffff"
-                ></TextView>
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 

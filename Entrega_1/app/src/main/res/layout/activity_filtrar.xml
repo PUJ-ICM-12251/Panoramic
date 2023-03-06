@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/Relative0"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:overScrollMode="ifContentScrolls"
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="vertical"
@@ -17,24 +17,26 @@
             android:id="@+id/Relative1"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#F24B4B"
+            android:background="@color/subdued_red"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
             android:paddingRight="20dp"
+            android:paddingLeft="20dp"
             tools:ignore="MissingConstraints">
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="filtro"
+                android:text="@string/filtro"
                 android:gravity=""
                 android:textAllCaps="true"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentEnd="true"
+                tools:ignore="HardcodedText" />
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/Relative2"
@@ -50,8 +52,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Seleccionar ciudad"
-                android:textColor="#ffffff"
+                android:text="@string/seleccionar_ciudad"
+                android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 ></TextView>
@@ -63,16 +65,16 @@
                 android:paddingTop="30dp"
                 android:paddingLeft="30dp"
                 android:layout_below="@id/SeleccionCiudad"
-                >
+                tools:ignore="RtlSymmetry">
+
                 <TextView
                     android:id="@+id/CiudadElegida"
-                    android:text="Ciudad"
+                    android:text="@string/ciudad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#ffffff"
-                    android:background="#F24B4B"
-                    android:textSize="20sp"
-                    ></TextView>
+                    android:textColor="@color/white"
+                    android:background="@color/subdued_red"
+                    android:textSize="20sp" />
 
                 <Spinner
                     android:id="@+id/ListaCiudades"
@@ -89,7 +91,7 @@
                 android:text="Tipo de establecimiento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:layout_centerHorizontal="true"
@@ -104,57 +106,62 @@
                 android:gravity="center|top"
                 android:paddingTop="20dp"
                 android:paddingLeft="10dp">
+
                 <Button
                     android:id="@+id/btnRestaurante"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:backgroundTint="#F24B4B"
+                    android:backgroundTint="@color/subdued_red"
                     android:text="Restaurante"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
                     app:icon="@drawable/restaurante"
                     app:iconSize="20dp"
-                    app:iconTint="@null"
-                    ></Button>
+                    app:iconTint="@null"></Button>
+
                 <Button
                     android:id="@+id/btnEvento"
-                    android:layout_toRightOf="@id/btnRestaurante"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:backgroundTint="#F24B4B"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@id/btnRestaurante"
+                    android:backgroundTint="@color/subdued_red"
                     android:text="Evento"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
                     app:icon="@drawable/evento"
                     app:iconSize="20dp"
-                    app:iconTint="@null"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    ></Button>
+                    app:iconTint="@null"></Button>
+
                 <Button
                     android:id="@+id/btnLocal"
-                    android:backgroundTint="#F24B4B"
-                    android:layout_toRightOf="@id/btnEvento"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/btnEvento"
+                    android:backgroundTint="@color/subdued_red"
+                    android:text="Local"
+                    android:textColor="#212121"
                     android:textSize="10sp"
                     app:icon="@drawable/tienda"
                     app:iconSize="20dp"
-                    app:iconTint="@null"
-                    android:text="Local"
-                    android:fontFamily="sans-serif-medium"
-                    ></Button>
+                    app:iconTint="@null"></Button>
             </RelativeLayout>
+
             <TextView
-                android:layout_margin="20dp"
                 android:id="@+id/Precio"
-                android:text = "Precio"
-                android:layout_below="@id/Relative4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"
-                android:textStyle="bold"
+                android:layout_below="@id/Relative4"
                 android:layout_centerHorizontal="true"
-                ></TextView>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/precio"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"></TextView>
             <RelativeLayout
                 android:id="@+id/Relative5"
                 android:layout_below="@id/Precio"
@@ -171,9 +178,9 @@
                     >
                     <TextView
                         android:id="@+id/txtDesd"
-                        android:text="Desde"
+                        android:text="@string/desde"
                         android:textSize="30sp"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         ></TextView>
@@ -185,8 +192,8 @@
                         android:layout_below="@id/txtDesd"
                         android:textSize="20sp"
                         android:hint="Precio minimo"
-                        android:textColorHint="#ffffff"
-                        android:textColor="#FFFFFF"></EditText>
+                        android:textColorHint="@color/white"
+                        android:textColor="@color/white"></EditText>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_marginLeft="30dp"
@@ -202,8 +209,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hasta"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#FFFFFF"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
                         android:textSize="30sp"></TextView>
 
                     <EditText
@@ -212,7 +219,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txthasta"
                         android:hint="Precio maximo"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textColorHint="#FFFFFF"
                         android:textSize="20sp"
                         ></EditText>
@@ -280,7 +287,7 @@
                         android:id="@+id/txtCierra"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cierra"
+                        android:text="@string/cierra"
                         android:textColor="#FFFFFF"
                         android:textColorHint="#FFFFFF"
                         android:textSize="30sp"></TextView>
@@ -296,15 +303,17 @@
                         android:textSize="20sp"></EditText>
                 </RelativeLayout>
             </RelativeLayout>
-                <Button
+
+            <Button
                 android:id="@+id/botonAp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/Relative8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/Relative8"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="#F24B4B"
-                android:text="Aplicar filtros"></Button>
+                android:backgroundTint="@color/subdued_red"
+                android:text="Aplicar filtros"
+                android:textColor="#212121"></Button>
 
         </RelativeLayout>
     </RelativeLayout>

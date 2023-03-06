@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232323"
+    android:background="@color/dark_grey"
     android:padding="15dp"
     tools:context=".BuscarEstable">
 
@@ -57,7 +57,7 @@
         app:icon="@drawable/resic"
         app:iconSize="20dp"
         app:iconTint="@null"
-        app:backgroundTint="#F24B4B"
+        app:backgroundTint="@color/subdued_red"
         android:background="@drawable/botones"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="149dp" />
@@ -71,7 +71,7 @@
         app:icon="@drawable/eveic"
         app:iconSize="50dp"
         app:iconTint="@null"
-        app:backgroundTint="#F24B4B"
+        app:backgroundTint="@color/subdued_red"
         android:background="@drawable/botones"
         android:layout_toRightOf="@id/button3"
         tools:layout_editor_absoluteX="27dp"
@@ -115,7 +115,7 @@
         app:icon="@drawable/popic"
         app:iconSize="13dp"
         app:iconTint="@null"
-        app:backgroundTint="#F24B4B"
+        app:backgroundTint="@color/subdued_red"
         tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
     <Button
@@ -134,7 +134,7 @@
         app:icon="@drawable/filic"
         app:iconSize="13dp"
         app:iconTint="@null"
-        app:backgroundTint="#F24B4B"
+        app:backgroundTint="@color/subdued_red"
         tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="217dp" />
@@ -156,7 +156,7 @@
         app:icon="@drawable/precic"
         app:iconSize="13dp"
         app:iconTint="@null"
-        app:backgroundTint="#F24B4B"
+        app:backgroundTint="@color/subdued_red"
         tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="217dp" />
@@ -177,7 +177,7 @@
         app:icon="@drawable/rankic"
         app:iconSize="13dp"
         app:iconTint="@null"
-        app:backgroundTint="#F24B4B"
+        app:backgroundTint="@color/subdued_red"
         tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="217dp" />

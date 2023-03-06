@@ -13,4 +13,14 @@
     <string name="Registro">Registro</string>
     <string name="Descr">Ingresa los siguientes datos</string>
     <string name="name">Nombre</string>
+    <string name="cierra">Cierra</string>
+    <string name="filtro">filtro</string>
+    <string name="seleccionar_ciudad">Seleccionar ciudad</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="precio">Precio</string>
+    <string name="desde">Desde</string>
+    <string name="direcci_n">Dirección</string>
+    <string name="puntuaci_n">Puntuación</string>
+    <string name="telefono">Telefono</string>
+    <string name="tipo_de_establecimiento">Tipo de establecimiento</string>
 </resources>
