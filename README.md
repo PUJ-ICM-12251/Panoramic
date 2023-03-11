@@ -7,7 +7,7 @@ Nombre del grupo: PontiDevs <br />
 - Martin Zhaohong Chen He [MartinCHz] <br />
 - David Mateo Henao Prieto [davidmateohenaoprieto] <br />
 - Santiago Gallo Jaimes [KironStylo] <br />
-- David Alejandro Sequera Lievano [] <br />
+- David Alejandro Sequera Lievano [davidsequera] <br />
 
 ### ESPECIFICACIÓN DEL REPOSITORIO
 En este repositorio se subirán todos las entregas que serán exigidas en el curso.
