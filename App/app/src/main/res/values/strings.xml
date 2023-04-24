@@ -23,4 +23,5 @@
     <string name="puntuaci_n">Puntuación</string>
     <string name="telefono">Telefono</string>
     <string name="tipo_de_establecimiento">Tipo de establecimiento</string>
+    <string name="title_activity_ver_mapa">VerMapa</string>
 </resources>
