@@ -9,7 +9,7 @@
     android:padding="15dp"
     tools:context=".Home" >
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/button5"
         android:layout_width="330dp"
         android:layout_height="54dp"
