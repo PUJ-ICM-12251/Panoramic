@@ -7,18 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.panoramic.databinding.ActivityBuscarEstableBinding;
+
 public class BuscarEstable extends AppCompatActivity {
 
-    Button boton1;
-    Button boton2;
+    ActivityBuscarEstableBinding binding;
+    Button filtrar, verDetalles, abrirMapa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buscar_estable);
-        boton1 = findViewById(R.id.button11);
-        boton2 = findViewById(R.id.button14);
+        binding = ActivityBuscarEstableBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        filtrar = binding.button11;
+        verDetalles = binding.button14;
+        // Boton de abrir el mapa
+        abrirMapa = binding.button8;
 
-        boton1.setOnClickListener(new View.OnClickListener() {
+
+        filtrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BuscarEstable.this, Filtrar.class);
@@ -26,12 +33,22 @@ public class BuscarEstable extends AppCompatActivity {
             }
         });
 
-        boton2.setOnClickListener(new View.OnClickListener() {
+        verDetalles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BuscarEstable.this, VerDetalles.class);
                 startActivity(intent);
             }
         });
+
+        abrirMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BuscarEstable.this,VerMapa.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

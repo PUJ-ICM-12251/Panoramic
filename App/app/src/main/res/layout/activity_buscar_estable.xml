@@ -96,7 +96,6 @@
         android:textSize="10dp"
         android:textStyle="bold"
         app:backgroundTint="#EAE8E8"
-        tools:ignore="TextSizeCheck"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="149dp" />
 
