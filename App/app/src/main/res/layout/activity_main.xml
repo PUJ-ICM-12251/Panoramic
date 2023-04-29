@@ -9,11 +9,50 @@
     android:padding="15dp"
     tools:context=".Home" >
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/button5"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="321dp"
+        android:layout_height="225dp"
+        android:layout_above="@id/signInButton"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp"
+        app:srcCompat="@drawable/panoramic_logo" />
+
+    <Button
+        android:id="@+id/signInButton"
         android:layout_width="330dp"
         android:layout_height="54dp"
-        android:layout_below="@id/button7"
+        android:layout_centerInParent="true"
+        android:background="@drawable/botones"
+        android:text="Sign In with Panoramic"
+        android:textAlignment="viewStart"
+        app:backgroundTint="#DD0822"
+        app:icon="@drawable/panoramic_logo_transparent"
+        app:iconSize="35dp"
+        app:iconTint="@null"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/signInFacebookButton"
+        android:layout_width="330dp"
+        android:layout_height="54dp"
+        android:layout_below="@id/signInButton"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/botones"
+        android:text="Sign In with Facebook"
+        android:textAlignment="viewStart"
+        app:backgroundTint="#1877F2"
+        app:icon="@drawable/facebook"
+        app:iconSize="30dp"
+        app:iconTint="@null"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signInGoogleButton"
+        android:layout_width="330dp"
+        android:layout_height="54dp"
+        android:layout_below="@id/signInFacebookButton"
         android:layout_centerInParent="true"
         android:layout_marginTop="21dp"
         android:background="@drawable/botones"
@@ -27,26 +66,10 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/signInAppleButton"
         android:layout_width="330dp"
         android:layout_height="54dp"
-        android:layout_below="@id/button"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="21dp"
-        android:background="@drawable/botones"
-        android:text="Sign In with Facebook"
-        android:textAlignment="viewStart"
-        app:backgroundTint="#1877F2"
-        app:icon="@drawable/facebook"
-        app:iconSize="30dp"
-        app:iconTint="@null"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="330dp"
-        android:layout_height="54dp"
-        android:layout_below="@id/button5"
+        android:layout_below="@id/signInGoogleButton"
         android:layout_centerInParent="true"
         android:layout_marginTop="21dp"
         android:background="@drawable/botones"
@@ -59,7 +82,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/signUpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿No tienes cuenta? Registrate"
@@ -67,32 +90,9 @@
         tools:layout_editor_absoluteX="112dp"
         tools:layout_editor_absoluteY="668dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/button6"
+        android:layout_below="@id/signInAppleButton"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="330dp"
-        android:layout_height="54dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/botones"
-        android:text="Sign In with Panoramic"
-        android:textAlignment="viewStart"
-        app:backgroundTint="#DD0822"
-        app:icon="@drawable/panora"
-        app:iconSize="35dp"
-        app:iconTint="@null"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="321dp"
-        android:layout_height="225dp"
-        android:layout_above="@id/button"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="40dp"
-        app:srcCompat="@drawable/panora" />
 
 </RelativeLayout>

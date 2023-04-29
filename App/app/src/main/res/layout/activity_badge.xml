@@ -117,7 +117,7 @@
         app:layout_constraintVertical_bias="0.739" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/signInAppleButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         app:backgroundTint="@color/subdued_red"
@@ -129,7 +129,7 @@
         app:layout_constraintVertical_bias="0.294" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/signInFacebookButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         app:backgroundTint="@color/subdued_red"
@@ -142,7 +142,7 @@
         app:layout_constraintVertical_bias="0.294" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/signInGoogleButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         app:backgroundTint="@color/subdued_red"
