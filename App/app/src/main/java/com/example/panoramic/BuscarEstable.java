@@ -29,7 +29,7 @@ public class BuscarEstable extends AppCompatActivity {
 //    private Sensor sensor;
 
     ActivityBuscarEstableBinding binding;
-    Button filtrar, verDetalles, abrirMapa;
+    Button filtrar, verDetalles, abrirMapa, perfil;
 
     SensorManager sensorManager;
     Sensor stepSensor;
@@ -53,6 +53,8 @@ public class BuscarEstable extends AppCompatActivity {
         verDetalles = binding.button14;
         // Boton de abrir el mapa
         abrirMapa = binding.button8;
+        perfil = binding.perfil;
+
 
 
 
@@ -103,23 +105,30 @@ public class BuscarEstable extends AppCompatActivity {
             }
         });
 
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BuscarEstable.this, Opciones.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        sensorManager.registerListener(stepSensorListener,
-//                stepSensor,
-//                SensorManager.SENSOR_DELAY_NORMAL);
-//    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener(stepSensorListener,
+                stepSensor,
+                SensorManager.SENSOR_DELAY_NORMAL);
+   }
 
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        Log.e()
-////        sensorManager.unregisterListener(stepSensorListener, stepSensor);
-//    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+       sensorManager.unregisterListener(stepSensorListener, stepSensor);
+    }
 
 
 
