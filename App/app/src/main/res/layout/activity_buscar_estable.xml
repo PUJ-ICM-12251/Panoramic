@@ -9,18 +9,82 @@
     android:padding="15dp"
     tools:context=".BuscarEstable">
 
+
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="79dp"
-        android:layout_above="@id/button8"
-        android:layout_marginBottom="54dp"
-        android:text="¿A dónde vamos?"
+        android:layout_width="377dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_search"
         android:textColor="#FFFFFF"
-        android:textSize="45dp"
+        android:textSize="45sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="41dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button8"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/botones"
+        android:backgroundTint="@color/main_dark"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="41dp">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_directions_run_24" />
+
+        <TextView
+            android:id="@+id/stepsTitleTextView"
+            android:layout_width="77dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="152dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/steps_title"
+            android:textColor="@color/light"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/suggestionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="144dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/steps_suggestion"
+            android:textColor="@color/light"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/stepCountTextView"
+            android:layout_width="77dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="288dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/light"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView3"
@@ -48,7 +112,7 @@
 
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonRestaurant"
         android:layout_width="181dp"
         android:layout_height="70dp"
         android:layout_above="@id/textView5"
@@ -73,14 +137,14 @@
         app:iconTint="@null"
         app:backgroundTint="@color/subdued_red"
         android:background="@drawable/botones"
-        android:layout_toRightOf="@id/button3"
+        android:layout_toRightOf="@id/buttonRestaurant"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="149dp" />
 
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/button10"
         android:layout_marginBottom="5dp"
@@ -90,7 +154,7 @@
         android:text="Busca tu establecimiento favorito"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
-        android:textSize="13.5dp"
+        android:textSize="13.5sp"
         android:textStyle="bold"
         app:backgroundTint="#EAE8E8"
         app:icon="@drawable/busq"
@@ -103,7 +167,7 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_above="@id/button3"
+        android:layout_above="@id/buttonRestaurant"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
@@ -121,7 +185,7 @@
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_above="@id/button3"
+        android:layout_above="@id/buttonRestaurant"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
@@ -142,7 +206,7 @@
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_above="@id/button3"
+        android:layout_above="@id/buttonRestaurant"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
@@ -164,7 +228,7 @@
         android:id="@+id/button13"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_above="@id/button3"
+        android:layout_above="@id/buttonRestaurant"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"

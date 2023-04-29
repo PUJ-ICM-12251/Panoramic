@@ -9,6 +9,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light">#FAFAFA</color>
+
+    <color name="background">#232323</color>
     <!-- Extra   -->
 
     <color name="dark_grey">#232323</color>

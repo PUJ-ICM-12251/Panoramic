@@ -24,4 +24,7 @@
     <string name="telefono">Telefono</string>
     <string name="tipo_de_establecimiento">Tipo de establecimiento</string>
     <string name="title_activity_ver_mapa">VerMapa</string>
+    <string name="title_search">¿A dónde vamos?</string>
+    <string name="steps_title">Pasos</string>
+    <string name="steps_suggestion">Keep moving!</string>
 </resources>

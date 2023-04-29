@@ -315,6 +315,12 @@
                 android:text="Aplicar filtros"
                 android:textColor="#212121"></Button>
 
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+
         </RelativeLayout>
     </RelativeLayout>
 
