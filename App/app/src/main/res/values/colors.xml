@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Main colors   -->
-    <color name="dark_red">#9E0618</color>
-    <color name="dark_red_deep">#5E040E</color>
-    <color name="main_color">#DD0822</color>
-    <color name="main_light">#EB0924</color>
-    <color name="main_dark">#C4081E</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="light">#FAFAFA</color>
-    <!-- Extra   -->
-
     <color name="dark_grey">#232323</color>
     <color name="baby_yellow">#D59806</color>
     <color name ="subdued_red">#F24B4B</color>
@@ -19,6 +8,8 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="Persian_Blue">#401BBA</color>
     <color name = "Warm_red">#F24B4B</color>
     <color name = "Flaming_red">#F42306</color>

@@ -12,13 +12,13 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="79dp"
+        android:layout_height="wrap_content"
         android:layout_above="@id/button8"
-        android:layout_marginBottom="54dp"
         android:text="¿A dónde vamos?"
         android:textColor="#FFFFFF"
-        android:textSize="45dp"
+        android:textSize="50dp"
         android:textStyle="bold"
+        android:layout_marginBottom="8dp"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="41dp" />
 
@@ -89,13 +89,13 @@
         android:background="@drawable/botones"
         android:text="Busca tu establecimiento favorito"
         android:textAlignment="viewStart"
-        android:textColor="@color/black"
-        android:textSize="13.5dp"
-        android:textStyle="bold"
-        app:backgroundTint="#EAE8E8"
         app:icon="@drawable/busq"
         app:iconSize="30dp"
         app:iconTint="@null"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:backgroundTint="#EAE8E8"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="149dp" />
 
