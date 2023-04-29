@@ -267,7 +267,7 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
                 addresses = geocoder.getFromLocation(user.latitude,user.longitude,1);
                 originAddress.setText(addresses.get(0).getAddressLine(0));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                logger.info("No se proceso la dirección\n");
             }
 
             if(centradoInicial) {

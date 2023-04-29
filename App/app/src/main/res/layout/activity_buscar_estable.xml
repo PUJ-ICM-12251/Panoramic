@@ -17,23 +17,26 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="0.3"
             android:text="@string/title_search"
             android:textColor="#FFFFFF"
             android:textSize="35sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="30dp"
-            tools:layout_editor_absoluteY="41dp" />
+            tools:layout_editor_absoluteY="41dp"
+            android:layout_marginRight="15dp"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/perfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
+            app:iconGravity="textStart"
             app:icon="@drawable/plus"
             app:iconSize="30dp"
-           ></Button>
+           ></com.google.android.material.button.MaterialButton>
     </LinearLayout>
 
 
