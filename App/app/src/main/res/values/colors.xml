@@ -11,4 +11,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Persian_Blue">#401BBA</color>
+    <color name = "Warm_red">#F24B4B</color>
+    <color name = "Flaming_red">#F42306</color>
 </resources>
