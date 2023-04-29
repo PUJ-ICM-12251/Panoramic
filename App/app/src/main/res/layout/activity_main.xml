@@ -16,7 +16,7 @@
         android:layout_above="@id/signInButton"
         android:layout_centerInParent="true"
         android:layout_marginBottom="40dp"
-        app:srcCompat="@drawable/panora" />
+        app:srcCompat="@drawable/panoramic_logo" />
 
     <Button
         android:id="@+id/signInButton"
@@ -27,7 +27,7 @@
         android:text="Sign In with Panoramic"
         android:textAlignment="viewStart"
         app:backgroundTint="#DD0822"
-        app:icon="@drawable/panora"
+        app:icon="@drawable/panoramic_logo_transparent"
         app:iconSize="35dp"
         app:iconTint="@null"
         tools:ignore="MissingConstraints" />
