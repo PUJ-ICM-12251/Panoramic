@@ -53,7 +53,7 @@ public class BuscarEstable extends AppCompatActivity {
         verDetalles = binding.button14;
         // Boton de abrir el mapa
         abrirMapa = binding.button8;
-        perfil = binding.perfil;
+        perfil = binding.profileButton;
 
 
 
