@@ -22,4 +22,6 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="Persian_Blue">#401BBA</color>
+    <color name = "Warm_red">#F24B4B</color>
+    <color name = "Flaming_red">#F42306</color>
 </resources>

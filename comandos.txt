@@ -1,0 +1,180 @@
+    1  cd
+    2  cd /c
+    3  ls
+    4  cd Git Projects
+    5  cd /Git Projects
+    6  cd Git\ Projects/
+    7  clear
+    8  ls
+    9  git config --global user.name "KironStylo"
+   10  git config --global user.email santiaduque@gmail.com
+   11  mkdir CalculadoraSolid
+   12  ls
+   13  cd CalculadoraSolid/
+   14  clear
+   15  git clone https://github.com/aabg1980teacher/solidCalculator.git
+   16  ls
+   17  cd solidCalculator/
+   18  clear
+   19  git checkout -b develop/main
+   20  git branch -r
+   21  git branch
+   22  git branch -d develop/main
+   23  git checkout main
+   24  git branch -d develop/main
+   25  clear
+   26  git branch
+   27  clear
+   28  git branch
+   29  git branch develop
+   30  git branch
+   31  git branch -d develop
+   32  clear
+   33  git branch
+   34  git branch develop
+   35  git branch master
+   36  ls
+   37  clear
+   38  git checkout develop
+   39  git checkout master
+   40  clear
+   41  git push origin master
+   42  git push origin master
+   43  clear
+   44  git push origin master
+   45  git status
+   46  git checkout develop
+   47  git push origin develop
+   48  clear
+   49  git flow init
+   50  git flow init
+   51  git flow init -f
+   52  git branch
+   53  clear
+   54  git flow feature logaritmo
+   55  clear
+   56  git flow feature start logaritmo
+   57  git flow init
+   58  clear
+   59  git status
+   60  git flow init
+   61  git flow feature start logaritmo
+   62  branch
+   63  git branch
+   64  git add .
+   65  git flow feature start log
+   66  clear
+   67  git flow feature
+   68  git flow feature start log
+   69  git checkout develop
+   70  git pull origin
+   71  git pull origin develop
+   72  clear
+   73  git flow feature start log
+   74  git flow feature rebase develop
+   75  git pull
+   76  clear
+   77  git checkout develop
+   78  git pull origin develop
+   79  git checkout feature/suma
+   80  git flow start log
+   81  git flow feature start log
+   82  git flow feature
+   83  clear
+   84  git push origin develop
+   85  git pull develop
+   86  git branch
+   87  git checkout main
+   88  git push origin develop
+   89  clear
+   90  git checkout develop
+   91  git branch
+   92  git flow init
+   93  ls
+   94  cd Downloads/
+   95  cd ..
+   96  cd Desktop/
+   97  clear
+   98  git clone https://github.com/aabg1980teacher/solidCalculator.git
+   99  ls
+  100  cd solidCalculator/
+  101  clear
+  102  git checkout develop
+  103  git flow init
+  104  git flow feature start multiplicacion
+  105  git status
+  106  git add .
+  107  git commit -a
+  108  git flow feature publish multiplicacion
+  109  git commit -a
+  110  git push
+  111  git flow feature finish multiplicacion
+  112  git push
+  113  git push origin develop
+  114  clear
+  115  git clone https://github.com/aabg1980teacher/solidCalculator.git
+  116  git flow init
+  117  clear
+  118  git flow feature start seno
+  119  git add .
+  120  git commit -a
+  121  git flow feature publish seno
+  122  git commit -a
+  123  git push
+  124  git flow feature finish seno
+  125  git flow feature finish seno
+  126  git branch
+  127  git checkout develop
+  128  git pull
+  129  git checkout feature/seno
+  130  git flow feature finish seno
+  131  clear
+  132  git flow feature finish seno
+  133  clear
+  134  git push
+  135  pit push origin develop
+  136  clear
+  137  git push origin develop
+  138  clear
+  139  clera
+  140  clear
+  141  history 30
+  142  clear
+  143  exit
+  144  git clone https://github.com/Luistreak/ProyectoWheelsTresCuartos.git
+  145  git init
+  146  ls
+  147  git add .
+  148  git commit -m "First commit"
+  149  git remote add origin https://github.com/KironStylo/Simple-Calculator-.git
+  150  git push
+  151  git push --set-upstream origin master
+  152  git add .
+  153  git commit -m "Second commit"
+  154  exit
+  155  nano
+  156  C:\Users\santi\Desktop\University\Semesters\Fifth Semester\Mobile Computing\Project Github\Panoramic
+  157  cd [200~C:\Users\santi\Desktop\University\Semesters\Fifth Semester\Mobile Computing\Project Github\Panoramic~
+  158  cd C:\Users\santi\Desktop\University\Semesters\Fifth Semester\Mobile Computing\Project Github\Panoramic~
+  159  cd C:\Users\santi\Desktop\University\Semesters\Fifth Semester\Mobile Computing\Project Github\Panoramic
+  160  pwd
+  161  cd Desktop
+  162  ls
+  163  cd University/Semesters/Fifth\ Semester/Mobile\ Computing/Project\ Github/Panoramic/
+  164  git pull origin main
+  165  ls
+  166  cat README.md 
+  167  mv Entrega_1 App
+  168  ls
+  169  git status
+  170  git add .
+  171  git commit -m "Cambie el nombre del directorio desde GitBash XD"
+  172  git push origin main
+  173  log command
+  174  git log command
+  175  git log
+  176  git reflog
+  177  history
+  178  pwd
+  179  history >/c/Users/santi/Desktop/University/Semesters/Fifth Semester/Mobile Computing/text.txt
+  180  history > comandos.txt

@@ -15,10 +15,13 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -112,6 +115,24 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
     // Lista de los puntos para dibujar la ruta entre dos puntos
     ArrayList<LatLng> listPoints;
 
+    // Checkbox para activar y desactivar ubicación del usuario
+    CheckBox activarUbicacion;
+
+    // Controles de busqueda y creacion de rutas
+
+    boolean limpiarPantalla = false;
+
+    boolean permitirBuscar = true;
+
+    boolean centradoInicial = true;
+
+    // Direccion del usuario o colocado como origen
+    TextView originAddress;
+
+    // Boton para centrar la vista
+    Button centrarVista;
+
+
 
 
 
@@ -130,6 +151,28 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
         //Obtención del texto ingresado por el usuario
 
         mAddress = binding.address;
+
+        // Checkbox
+        activarUbicacion = binding.btnAct;
+
+        //Textview
+        originAddress = binding.miDir;
+
+        //Centrar vista
+        centrarVista = binding.btnCen;
+
+
+        centrarVista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!activarUbicacion.isChecked()){
+                    centradoInicial = true;
+                }
+                else{
+                    Toast.makeText(VerMapa.this,"No se puede centrar vista", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         mAddress.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -178,7 +221,7 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
             @Override
             public void onSensorChanged(SensorEvent event) {
                 if (mMap != null) {
-                    if (event.values[0] < 5000) {
+                    if (event.values[0] > 5000) {
                         Log.i("MAPS", "DARK MAP " + event.values[0]);
                         mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(VerMapa.this, R.raw.style_day_retro));
                     } else {
@@ -207,14 +250,39 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        Geocoder geocoder = new Geocoder(VerMapa.this);
 
         Location longclick = new Location("");
         mMap = googleMap;
 
 
         // Add a marker in Sydney and move the camera
-        LatLng user = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(user).title("Tu ubicación actual"));
+        if(!activarUbicacion.isChecked()) {
+            limpiarPantalla = false;
+            permitirBuscar = true;
+            LatLng user = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(user).title("Tu ubicación actual"));
+            List<Address> addresses;
+            try {
+                addresses = geocoder.getFromLocation(user.latitude,user.longitude,1);
+                originAddress.setText(addresses.get(0).getAddressLine(0));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            if(centradoInicial) {
+                centradoInicial = false;
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(user));
+                mMap.moveCamera(CameraUpdateFactory.zoomTo(10));
+            }
+        }
+        else{
+            if(!limpiarPantalla){
+                permitirBuscar = false;
+                limpiarPantalla = true;
+                mMap.clear();
+            }
+        }
 
         listPoints = new ArrayList<LatLng>();
 
@@ -223,8 +291,6 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
         mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(@NonNull LatLng latLng) {
-
-                Geocoder geocoder = new Geocoder(VerMapa.this);
 
                 // Ya hay más de dos puntos en el mapa
                 if (listPoints.size() >= 2) {
@@ -254,12 +320,18 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
 
                 // Se coloca el marcador
                 if (listPoints.size() == 1) {
+                    //Se agrega la direccion encontrada al text view
+                    originAddress.setText(direccion.getAddressLine(0).toString());
                     markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    mMap.moveCamera(CameraUpdateFactory.zoomTo(10));
                 } else {
                     markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    mMap.moveCamera(CameraUpdateFactory.zoomTo(10));
                 }
-                Marker marker = mMap.addMarker(markerOptions);
-                marcadores.add(marker);
+                mMap.addMarker(markerOptions);
+
 
                 //Cuando el tamaño de la lista es dos, se dibuja la ruta entre los dos puntos
                 if(listPoints.size() == 2) {
@@ -530,37 +602,46 @@ public class VerMapa extends FragmentActivity implements OnMapReadyCallback {
 
     private void findAddress() {
         String addressString = mAddress.getText().toString();
-        if (!addressString.isEmpty()) {
-            try {
-                List<Address> addresses = mGeocoder.getFromLocationName(addressString,2);
-                if (addresses != null && !addresses.isEmpty()) {
-                    Address addressResult = addresses.get(0);
-                    nLocation = new Location("Nuevo provedor");
-                    nLocation.setLatitude(addressResult.getLatitude());
-                    nLocation.setLongitude(addressResult.getLongitude());
-                    float distance = mLocation.distanceTo(nLocation);
-                    LatLng position = new LatLng(addressResult.getLatitude(), addressResult.getLongitude());
-                    Toast.makeText(VerMapa.this, "La distancia entre tu ubicación y el" +
-                            " último marcador puesto es " + distance, Toast.LENGTH_LONG);
-                    distancia.setText(distance+"");
-                    // Se obtiene la distancia entre la ubicacion del usuario
-                    // y la localizacion de la direccion encontrada por GeoCoder
-                    if (mMap != null) {
-                        mMap.addMarker(new MarkerOptions().position(position)
-                                .title(addressResult.getFeatureName())
-                                .snippet(addressResult.getAddressLine(0))
-                                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
+        if(permitirBuscar) {
+            if (!addressString.isEmpty()) {
+                try {
+                    List<Address> addresses = mGeocoder.getFromLocationName(addressString, 2);
+                    if (addresses != null && !addresses.isEmpty()) {
+                        Address addressResult = addresses.get(0);
+                        nLocation = new Location("Nuevo provedor");
+                        nLocation.setLatitude(addressResult.getLatitude());
+                        nLocation.setLongitude(addressResult.getLongitude());
+                        float distance = mLocation.distanceTo(nLocation);
+                        LatLng position = new LatLng(addressResult.getLatitude(), addressResult.getLongitude());
+                        Toast.makeText(VerMapa.this, "La distancia entre tu ubicación y el" +
+                                " último marcador puesto es " + distance, Toast.LENGTH_LONG);
+                        // Se obtiene la distancia entre la ubicacion del usuario
+                        // y la localizacion de la direccion encontrada por GeoCoder
+                        if (mMap != null) {
+                            mMap.addMarker(new MarkerOptions().position(position)
+                                    .title(addressResult.getFeatureName())
+                                    .snippet(addressResult.getAddressLine(0))
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
 
+                            // Se dibuja la ruta entre la ubicación actual del usuario y la ubicación entegrada por Geocoder
+                            String url = getRequestUrl(new LatLng(mLocation.getLatitude(), mLocation.getLongitude()), new LatLng(nLocation.getLatitude(), nLocation.getLongitude()));
+                            TaskRequestDirections taskRequestDirections = new TaskRequestDirections();
+                            taskRequestDirections.execute(url);
+
+                        }
+                    } else {
+                        Toast.makeText(VerMapa.this, "Dirección no encontrada", Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    Toast.makeText(VerMapa.this, "Dirección no encontrada", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
+            } else {
+                Toast.makeText(VerMapa.this, "La dirección está vacía", Toast.LENGTH_SHORT).show();
             }
-        } else {
-            Toast.makeText(VerMapa.this, "La dirección está vacía", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(VerMapa.this,"No se puede buscar", Toast.LENGTH_SHORT).show();
         }
     }
 
