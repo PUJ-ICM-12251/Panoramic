@@ -41,11 +41,11 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = findViewById(R.id.button);
-        button7 = findViewById(R.id.button7);
-        button5 = findViewById(R.id.button5);
-        button6 = findViewById(R.id.button6);
-        text = findViewById(R.id.textView);
+        button = findViewById(R.id.signInButton);
+        button7 = findViewById(R.id.signInFacebookButton);
+        button5 = findViewById(R.id.signInGoogleButton);
+        button6 = findViewById(R.id.signInAppleButton);
+        text = findViewById(R.id.signUpTextView);
         mAuth = FirebaseAuth.getInstance();
         mAuth.signOut();
 
