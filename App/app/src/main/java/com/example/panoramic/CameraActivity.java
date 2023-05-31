@@ -102,7 +102,7 @@ public class CameraActivity extends AppCompatActivity {
             }
             //Continua solo el archivo ha sido exitosamente creado
             if (photoFile != null) {
-                Uri photoURI = FileProvider.getUriForFile(this, "com.example.android.fileprovider", photoFile);
+                Uri photoURI = FileProvider.getUriForFile(this, "Panoramic.fileprovider", photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, CAMERA_PERMISSION_ID);
             }
