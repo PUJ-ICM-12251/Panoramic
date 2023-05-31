@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/peopleImage"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/peopleFirstName"
+        style="@style/PeopleMainLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="John" />
+
+    <TextView
+        android:id="@+id/peopleLastName"
+        style="@style/PeopleMainLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/peopleFirstName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Doe" />
+
+
+    <TextView
+        android:id="@+id/peopleAddress"
+        style="@style/PeopleSecondaryLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="4dp"
+        android:maxWidth="320dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/peopleFirstName"
+        tools:text="FK ST 123 TO 890" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

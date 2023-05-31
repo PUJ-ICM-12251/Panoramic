@@ -21,7 +21,7 @@ public class Selector extends AppCompatActivity {
     }
 
     public void loadCamera(View view) {
-        Intent intent = new Intent(Selector.this, Opciones.class);
+        Intent intent = new Intent(Selector.this, Menu.class);
         startActivity(intent);
     }
 
