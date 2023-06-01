@@ -60,10 +60,10 @@ public class ListarUsuarios extends AppCompatActivity {
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             User user = userListLocal.get(position);
-//            Intent intent = new Intent(ListarUsuarios.this, MapsUsuario.class);
-//            intent.putExtra("user", user);
+            Intent intent = new Intent(ListarUsuarios.this, MapsUsuario.class);
+            intent.putExtra("user", user);
             Log.i(TAG, "User selected: " + user.toString());
-//            startActivity(intent);
+            startActivity(intent);
         });
 
 
