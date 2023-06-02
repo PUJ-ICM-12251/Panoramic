@@ -1,5 +1,6 @@
-package com.example.panoramic.model;
+package com.example.panoramic.paths;
 
 public class DatabasePaths {
     public static final String USER = "user/";
+
 }

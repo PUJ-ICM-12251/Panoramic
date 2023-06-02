@@ -22,16 +22,13 @@ public class User  implements Serializable {
     private String mail;
     private double latitude;
     private double longitude;
-
+    private boolean available;
     public String getMail() {
         return mail;
     }
-
     public void setMail(String mail) {
         this.mail = mail;
     }
-
-    private boolean available;
     public boolean isAvailable() {
         return available;
     }
@@ -70,5 +67,17 @@ public class User  implements Serializable {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", mail='" + mail + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", available=" + available +
+                '}';
     }
 }

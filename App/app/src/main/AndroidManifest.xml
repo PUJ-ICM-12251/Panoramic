@@ -24,7 +24,13 @@
         android:theme="@style/Theme.Panoramic"
         tools:targetApi="31">
         <activity
-            android:name=".Opciones"
+            android:name=".MapsUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".ListarUsuarios"
+            android:exported="false" />
+        <activity
+            android:name=".Menu"
             android:exported="false" />
         <activity
             android:name=".Selector"
