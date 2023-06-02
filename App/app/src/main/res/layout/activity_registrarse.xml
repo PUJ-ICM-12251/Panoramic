@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Info"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="170dp"
         android:text="@string/name"
         android:textSize="22sp"
         tools:layout_editor_absoluteX="169dp"
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/editName"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="26dp"
         android:text="@string/Email"
         android:textSize="22sp"
         tools:layout_editor_absoluteX="169dp"
@@ -96,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="26dp"
         android:text="@string/contrasena"
         android:textSize="22sp"
         tools:layout_editor_absoluteX="169dp"
@@ -126,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/contrasenaCampo"
         android:layout_centerInParent="true"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="21dp"
         android:text="Acepto términos y condiciones"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
@@ -137,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/checkBox"
         android:layout_centerInParent="true"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#930202"
         android:text="@string/text_boton2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,6 +146,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="80dp"
+        app:srcCompat="@drawable/sinfoto" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="210dp"
+        android:textSize="12dp"
+        android:onClick="startGallery"
+        android:text="Subir foto"
+        android:backgroundTint="#930202"/>
 
 
 </RelativeLayout>

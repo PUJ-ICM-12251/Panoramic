@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,28 +7,70 @@
     android:background="@color/background"
     tools:context=".EditarPerfil">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/editPicture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="550dp"
+        android:backgroundTint="#FF0000"
+        android:onClick="edit"
+        android:text="Editar perfil"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:icon="@drawable/a3201525"
+        app:iconSize="30dp" />
 
-        <Button
-            android:id="@+id/editPicture"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF0000"
-            android:onClick="edit"
-            android:text="Editar Foto"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:icon="@drawable/a3201525"
-            app:iconSize="30dp" />
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="80dp"
+        app:srcCompat="@drawable/sinfoto"/>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_below="@id/imageView6"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Nombre:" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_below="@id/imageView6"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="50dp"
+        android:text=" " />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_below="@id/textView"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Correo: " />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_below="@id/textView"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="50dp"
+        android:text=" " />
+
+</RelativeLayout>
