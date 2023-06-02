@@ -9,14 +9,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
+/*
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @IgnoreExtraProperties
+*/
 public class User  implements Serializable {
+
     private String id;
     private String name;
     private String mail;

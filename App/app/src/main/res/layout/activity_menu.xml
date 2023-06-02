@@ -7,11 +7,26 @@
     android:background="@color/background"
     tools:context=".Menu">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/light"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <Button
         android:id="@+id/buttonPerfil"
         android:layout_width="345dp"
         android:layout_height="48dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="120dp"
         android:backgroundTint="#FF0000"
         android:onClick="watchProfile"
         android:text="Ver Perfil"
@@ -20,7 +35,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textView" />
 
     <Button
         android:id="@+id/buttonSteps"
@@ -52,18 +67,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonPerfil" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="Menu"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/light"
-        android:textSize="70sp"
+    <Button
+        android:id="@+id/conectarse"
+        android:layout_width="345dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FF0000"
+        android:layout_marginTop="32dp"
+        android:onClick="connect"
+        android:text="Conectarse"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonListUsers" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

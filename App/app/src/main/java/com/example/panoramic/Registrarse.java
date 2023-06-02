@@ -202,7 +202,7 @@ public class Registrarse extends AppCompatActivity {
                             User p = new User();
                             p.setName(name.getText().toString());
                             p.setMail(emailC.getText().toString());
-                            p.setAvailable(true);
+                            p.setAvailable(false);
                             myRef=FirebaseDatabase.getInstance().getReference(DatabasePaths.USER + user.getUid());
                             myRef.setValue(p);
                             updateUI(user);

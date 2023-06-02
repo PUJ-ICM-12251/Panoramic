@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<ScrollView
     android:id="@+id/relative_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,161 +9,162 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     android:background="#1C1B1B">
-
-
-    <TextView
-        android:id="@+id/Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Registro"
-        android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="74dp" />
-
-    <TextView
-        android:id="@+id/Info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Descr"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="74dp"
-        android:layout_below="@id/Register"
-        android:textColor="#FFFFFF"/>
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Info"
-        android:layout_marginTop="170dp"
-        android:text="@string/name"
-        android:textSize="22sp"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="74dp"
-        android:textColor="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/editName"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/name"
-        android:background="@color/light"
-        android:hint="@string/text_hint3"
-        android:padding="7dip"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Registro"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="74dp" />
 
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editName"
-        android:layout_marginTop="26dp"
-        android:text="@string/Email"
-        android:textSize="22sp"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="74dp"
-        android:textColor="#FFFFFF"/>
+        <TextView
+            android:id="@+id/Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Descr"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="74dp"
+            android:layout_below="@id/Register"
+            android:textColor="#FFFFFF"/>
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/email"
-        android:background="@color/light"
-        android:hint="@string/text_hint1"
-        android:inputType="textEmailAddress"
-        android:padding="7dip"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        tools:ignore="TouchTargetSizeCheck" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Info"
+            android:layout_marginTop="170dp"
+            android:text="@string/name"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="74dp"
+            android:textColor="#FFFFFF" />
 
+        <EditText
+            android:id="@+id/editName"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:background="@color/light"
+            android:hint="@string/text_hint3"
+            android:padding="7dip"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/text_contra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/username"
-        android:layout_marginTop="26dp"
-        android:text="@string/contrasena"
-        android:textSize="22sp"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="74dp"
-        android:textColor="#FFFFFF"/>
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editName"
+            android:layout_marginTop="26dp"
+            android:text="@string/Email"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="74dp"
+            android:textColor="#FFFFFF"/>
 
-    <EditText
-        android:id="@+id/contrasenaCampo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_contra"
-        android:background="@color/light"
-        android:hint="@string/text_hint2"
-        android:inputType="textPassword"
-        android:padding="7dip"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/contrasenaCampo"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="21dp"
-        android:text="Acepto términos y condiciones"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/boton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/checkBox"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#930202"
-        android:text="@string/text_boton2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="80dp"
-        app:srcCompat="@drawable/sinfoto" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginStart="210dp"
-        android:textSize="12dp"
-        android:onClick="startGallery"
-        android:text="Subir foto"
-        android:backgroundTint="#930202"/>
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email"
+            android:background="@color/light"
+            android:hint="@string/text_hint1"
+            android:inputType="textEmailAddress"
+            android:padding="7dip"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3"
+            tools:ignore="TouchTargetSizeCheck" />
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/text_contra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username"
+            android:layout_marginTop="26dp"
+            android:text="@string/contrasena"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="74dp"
+            android:textColor="#FFFFFF"/>
+
+        <EditText
+            android:id="@+id/contrasenaCampo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_contra"
+            android:background="@color/light"
+            android:hint="@string/text_hint2"
+            android:inputType="textPassword"
+            android:padding="7dip"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contrasenaCampo"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="21dp"
+            android:text="Acepto términos y condiciones"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/boton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBox"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#930202"
+            android:text="@string/text_boton2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="80dp"
+            app:srcCompat="@drawable/sinfoto" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginStart="210dp"
+            android:textSize="12sp"
+            android:onClick="startGallery"
+            android:text="Subir foto"
+            android:backgroundTint="#930202"/>
+    </RelativeLayout>
+</ScrollView>
