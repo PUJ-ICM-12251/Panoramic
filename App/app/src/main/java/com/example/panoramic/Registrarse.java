@@ -3,7 +3,6 @@ package com.example.panoramic;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.panoramic.home.BuscarEstable;
 import com.example.panoramic.model.User;
 import com.example.panoramic.paths.DatabasePaths;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -85,11 +85,6 @@ public class Registrarse extends AppCompatActivity {
                 String emailC1=emailC.getText().toString().trim();
                 String pass1=pass.getText().toString().trim();
 
-                SharedPreferences preferences = getSharedPreferences("MiSharedPreferences", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("username", name1);
-                editor.putString("email", emailC1);
-                editor.apply();
 
                 if(validateForm()) {
                     if (!isEmailValid(emailC1)) {

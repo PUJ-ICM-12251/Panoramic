@@ -54,7 +54,7 @@ public class Menu extends AppCompatActivity {
     // Componentes de UI
     private Button conectarse;
 
-    User user;
+    private User user;
 
     // Texto del boton
     private String[] textoBoton = {"Conectarse","Desconectarse"};
@@ -234,7 +234,7 @@ public class Menu extends AppCompatActivity {
             notificacion.put("titulo","Usuario de la aplicacion conectado");
             notificacion.put("detalle","Se ha conectado el usuario: "+ nombre);
             notificacion.put("foto",url_foto);
-            notificacion.put("UID",mAuth.getCurrentUser().getUid());
+            notificacion.put("UID",user.getId());
 
             json.put("data",notificacion);
             String URL="https://fcm.googleapis.com/fcm/send";

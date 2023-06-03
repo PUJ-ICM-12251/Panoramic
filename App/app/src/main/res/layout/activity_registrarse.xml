@@ -55,13 +55,12 @@
             android:background="@color/light"
             android:hint="@string/text_hint3"
             android:padding="7dip"
-            android:text=""
+            android:inputType="text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3"
-            tools:ignore="TouchTargetSizeCheck" />
+            app:layout_constraintVertical_bias="0.3" />
 
         <TextView
             android:id="@+id/email"

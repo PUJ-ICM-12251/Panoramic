@@ -14,7 +14,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.io.File;
@@ -22,13 +25,35 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.Manifest;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.panoramic.home.BuscarEstable;
+import com.example.panoramic.model.User;
+import com.example.panoramic.paths.DatabasePaths;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
 public class CameraActivity extends AppCompatActivity {
 
     // Setup del logger para esta clase
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$", Pattern.CASE_INSENSITIVE);
     private static final String TAG = CameraActivity.class.getName();
     private Logger logger = Logger.getLogger(TAG);
 
@@ -39,18 +64,81 @@ public class CameraActivity extends AppCompatActivity {
 
     // Componentes de GUI donde se mostrará la imagen de la cámara
     ImageView imageView;
+    private FirebaseAuth mAuth;
+    EditText nameC, emailC;
     String currentPhotoPath;
+    String storage_path;
+    DatabaseReference myRef;
+    StorageReference mStorage;
+    Uri file;
+    Button actualizar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        nameC = findViewById(R.id.editTextText);
+        emailC = findViewById(R.id.editTextTextEmailAddress);
+        imageView = findViewById(R.id.imageView);
+        actualizar = findViewById(R.id.button3);
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        mStorage = FirebaseStorage.getInstance().getReference();
+        myRef = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String username = dataSnapshot.child("name").getValue(String.class);
+                    String email = dataSnapshot.child("mail").getValue(String.class);
+                    nameC.setText(username);
+                    emailC.setText(email);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Manejar el error de consulta a la base de datos
+                Log.e("EditarPerfil", "Error al obtener los datos del usuario", databaseError.toException());
+            }
+        });
+
+        System.out.println("userID: " + userID);
+        storage_path = "fotos/" + userID;
+        StorageReference imageRef = storageRef.child(storage_path);
+
+        imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+            String imageUrl = uri.toString();
+            Glide.with(this)
+                    .load(imageUrl)
+                    .into(imageView);
+        }).addOnFailureListener(e -> {
+            // Manejar la falla al obtener la URL de descarga de la imagen
+            Log.e("EditarPerfil", "Error al obtener la URL de descarga de la imagen", e);
+        });
 
         // Pedir el permiso cuando la aplicación inicie
         logger.info("Se va a solicitar el permiso");
         requestPermission(this, cameraPerm, "Permiso para utiliza la camara", CAMERA_PERMISSION_ID);
         initView();
-        imageView = findViewById(R.id.imageView);
+
+        actualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name1=nameC.getText().toString().trim();
+                String emailC1=emailC.getText().toString().trim();
+
+                if (!isEmailValid(emailC1)) {
+                    Toast.makeText(CameraActivity.this, "Email is not a valid format",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                actualizar(emailC1);
+            }
+        });
     }
 
     public void requestPermission(Activity context, String permission, String justification, int id) {
@@ -140,10 +228,83 @@ public class CameraActivity extends AppCompatActivity {
                 case GALLERY_PERMISSION_ID:
                     Uri imageUri = data.getData();
                     imageView.setImageURI(imageUri);
+                    file = data.getData();
                     logger.info("Image loaded successfully");
                     break;
             }
         }
+    }
+
+    private void updateUI(FirebaseUser currentUser){
+        if(currentUser!=null){
+            Intent intent = new Intent(getBaseContext(), BuscarEstable.class);
+            storage_path = "fotos/" + currentUser.getUid();
+            StorageReference imageRef = mStorage.child(storage_path);
+            imageRef.putFile(file)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            // Get a URL to the uploaded content
+                            Log.i("FBApp", "Succesfully upload image");
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                        }
+                    });
+            //intent.putExtra("user", currentUser.getEmail());
+            startActivity(intent);
+        } else {
+            nameC.setText("");
+            emailC.setText("");
+        }
+    }
+
+    public void actualizar(String mail) {
+            FirebaseUser user = mAuth.getCurrentUser();
+            if (user != null) {
+                user.updateEmail(mail)
+                        .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    // Email updated successfully
+                                    updateProfile(user);
+                                } else {
+                                    // Failed to update email
+                                    Toast.makeText(CameraActivity.this, "Failed to update email", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+            }
+    }
+
+    private void updateProfile(FirebaseUser user) {
+        User p = new User();
+        p.setName(nameC.getText().toString());
+        p.setMail(emailC.getText().toString());
+        p.setAvailable(false);
+        myRef = FirebaseDatabase.getInstance().getReference(DatabasePaths.USER + user.getUid());
+        myRef.setValue(p)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            // Profile updated successfully
+                            updateUI(user);
+                        } else {
+                            // Failed to update profile
+                            Toast.makeText(CameraActivity.this, "Failed to update profile", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+    }
+
+
+    public static boolean isEmailValid(String emailStr) {
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
+        return matcher.find();
     }
 
 

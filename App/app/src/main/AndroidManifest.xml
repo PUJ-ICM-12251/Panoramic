@@ -97,7 +97,7 @@
             android:name=".IniciarSesion"
             android:exported="false" />
         <activity
-            android:name=".BuscarEstable"
+            android:name=".home.BuscarEstable"
             android:exported="false" />
         <activity
             android:name=".Home"
