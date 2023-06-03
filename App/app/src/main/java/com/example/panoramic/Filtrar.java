@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.panoramic.home.BuscarEstable;
+
 public class Filtrar extends AppCompatActivity {
 
     Button aplicar;

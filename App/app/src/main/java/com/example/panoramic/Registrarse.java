@@ -3,7 +3,6 @@ package com.example.panoramic;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.panoramic.home.BuscarEstable;
 import com.example.panoramic.model.User;
 import com.example.panoramic.paths.DatabasePaths;
 import com.google.android.gms.tasks.OnCompleteListener;
