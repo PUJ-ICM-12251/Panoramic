@@ -20,7 +20,6 @@ import dagger.Module;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ActivityComponent;
 import dagger.hilt.android.qualifiers.ApplicationContext;
-import lombok.Getter;
 
 @Module
 @InstallIn(ActivityComponent.class)
@@ -28,7 +27,11 @@ public class ClubService {
     public static final String TAG = ClubService.class.getName();
     public static final String CLUBS_FILE = "nightclubs.json";
     private final Context context;
-    @Getter
+
+    public static void setClubs(ArrayList<NightClub> clubs) {
+        ClubService.clubs = clubs;
+    }
+
     private static ArrayList<NightClub> clubs = new ArrayList<>();
 
     @Inject

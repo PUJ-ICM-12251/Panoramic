@@ -1,14 +1,10 @@
 package com.example.panoramic.model;
 
 import com.google.gson.annotations.SerializedName;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
+/*
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor(force = true)
+@NoArgsConstructor(force = true)*/
 public class
 NightClub {
     @SerializedName(value = "Name")
