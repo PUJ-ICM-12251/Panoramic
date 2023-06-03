@@ -12,19 +12,25 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 import com.example.panoramic.ListarUsuarios;
+import com.example.panoramic.MapsUsuario;
 import com.example.panoramic.R;
+import com.example.panoramic.model.User;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.Random;
+
+import io.grpc.internal.JsonParser;
 
 
 public class Fcm extends FirebaseMessagingService {
 
 
     String codigoUsuario;
+    User usuario;
 
     @Override
     public void onNewToken(@NonNull String s) {
@@ -45,11 +51,11 @@ public class Fcm extends FirebaseMessagingService {
         Log.i("INFO","Se esta haciendo una notificacion");
 
         if (remoteMessage.getData().size()>0){
+            usuario = new User();
             String titulo=remoteMessage.getData().get("titulo");
             String detalle=remoteMessage.getData().get("detalle");
             String foto=remoteMessage.getData().get("foto");
-            codigoUsuario = remoteMessage.getData().get("UID");
-
+            usuario.setId(remoteMessage.getData().get("UID"));
             // Se verfica si la versión de Android del celular es mayor a oreo.
             mayorqueoreo(titulo,detalle,foto);
 
@@ -101,8 +107,8 @@ public class Fcm extends FirebaseMessagingService {
     // Se indica a que pantalla se debe llevar al usuario cuando se presione la notificacion
     // Por ahora podemos mandarla a la lista de usuarios.
     public PendingIntent clicknoti(){
-        Intent nf=new Intent(getApplicationContext(), ListarUsuarios.class);
-        nf.putExtra("UID",codigoUsuario);
+        Intent nf=new Intent(getApplicationContext(), MapsUsuario.class);
+        nf.putExtra("user",usuario);
         nf.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         return PendingIntent.getActivity(this, 0, nf, PendingIntent.FLAG_IMMUTABLE);
     }

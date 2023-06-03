@@ -66,7 +66,6 @@ public class ListarUsuarios extends AppCompatActivity {
             startActivity(intent);
         });
 
-
     }
 
 

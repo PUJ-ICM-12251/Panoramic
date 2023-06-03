@@ -176,6 +176,7 @@ public class Menu extends AppCompatActivity {
                 // Esto es para la busqueda de un solo documento de la base de datos
                 // El snapshot se ubica en el id del documento del usuario
                 user = snapshot.getValue(User.class);
+                user.setId(currentUser.getUid());
                 nombre = user.getName();
                 Log.i("Info", "El usuario es: " + user.getName()+" "+user.getMail());
                 if(user.isAvailable()){
@@ -229,7 +230,7 @@ public class Menu extends AppCompatActivity {
             notificacion.put("titulo","Usuario de la aplicacion conectado");
             notificacion.put("detalle","Se ha conectado el usuario: "+ nombre);
             notificacion.put("foto",url_foto);
-            notificacion.put("UID",mAuth.getCurrentUser().getUid());
+            notificacion.put("UID",user.getId());
 
             json.put("data",notificacion);
             String URL="https://fcm.googleapis.com/fcm/send";
