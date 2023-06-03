@@ -24,6 +24,9 @@
         android:theme="@style/Theme.Panoramic"
         tools:targetApi="31">
         <activity
+            android:name=".BadgeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MapsUsuario"
             android:exported="false" />
         <activity
@@ -38,6 +41,11 @@
         <activity
             android:name=".CameraActivity"
             android:exported="false" />
+        <activity
+            android:name=".CaptureActivityPortrait"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -74,7 +82,7 @@
             android:name=".Review"
             android:exported="false" />
         <activity
-            android:name=".Badge"
+            android:name=".Badges"
             android:exported="false" />
         <activity
             android:name=".VerDetalles"
@@ -100,6 +108,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".Notificacion.Fcm"
             android:exported="false">

@@ -9,69 +9,60 @@
     tools:context=".CameraActivity">
 
 
+    <TextView
+        android:id="@+id/cameratitletextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="140dp"
+        android:text="@string/title_camera"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="41dp" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="286dp"
         android:layout_height="261dp"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="50dp"
-        app:srcCompat="@drawable/user2"
-        />
+        android:layout_marginTop="171dp"
+        app:srcCompat="@drawable/user2" />
+
     <Button
         android:id="@+id/buttonCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="150dp"
         android:backgroundTint="#FF0000"
         android:onClick="startCamera"
         android:text="Abrir Camara"
         android:textSize="14sp"
         app:cornerRadius="50dp"
         app:icon="@drawable/ic_camera_01"
-        android:layout_below="@id/imageView"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
         app:iconSize="30dp" />
 
     <Button
         android:id="@+id/buttonGaleria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="150dp"
         android:backgroundTint="#FF0000"
         android:onClick="startGallery"
         android:text="Abrir Galería"
         android:textSize="14sp"
         app:cornerRadius="40dp"
         app:icon="@drawable/ic_gallery_01"
-        android:layout_below="@id/imageView"
-        android:layout_marginStart="210dp"
-        android:layout_marginTop="30dp"
         app:iconSize="30dp" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
 
 </RelativeLayout>
