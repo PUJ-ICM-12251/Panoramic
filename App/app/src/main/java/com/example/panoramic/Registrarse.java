@@ -85,11 +85,6 @@ public class Registrarse extends AppCompatActivity {
                 String emailC1=emailC.getText().toString().trim();
                 String pass1=pass.getText().toString().trim();
 
-                SharedPreferences preferences = getSharedPreferences("MiSharedPreferences", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("username", name1);
-                editor.putString("email", emailC1);
-                editor.apply();
 
                 if(validateForm()) {
                     if (!isEmailValid(emailC1)) {
