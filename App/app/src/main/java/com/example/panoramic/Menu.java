@@ -54,7 +54,7 @@ public class Menu extends AppCompatActivity {
     // Componentes de UI
     private Button conectarse;
 
-    User user;
+    private User user;
 
     // Texto del boton
     private String[] textoBoton = {"Conectarse","Desconectarse"};

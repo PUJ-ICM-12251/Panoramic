@@ -4,19 +4,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-/*
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@IgnoreExtraProperties
-*/
+
 public class User  implements Serializable {
 
     private String id;
@@ -25,6 +13,8 @@ public class User  implements Serializable {
     private double latitude;
     private double longitude;
     private boolean available;
+
+
     public String getMail() {
         return mail;
     }
