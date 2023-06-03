@@ -28,4 +28,7 @@
     <string name="steps_title">Pasos</string>
     <string name="steps_suggestion">Keep moving!</string>
     <string name="list_users_title">Usuarios</string>
+    <string name="image_of_badge">image_of_badge</string>
+    <string name="title_camera">Camara</string>
+    <string name="title_badge">Badge</string>
 </resources>

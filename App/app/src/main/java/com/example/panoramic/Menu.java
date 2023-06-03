@@ -115,6 +115,11 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void watchBadges(View view) {
+        Intent intent = new Intent(Menu.this, Badges.class);
+        startActivity(intent);
+    }
+
 
     public void connect(View view){
         // Cuando el usuario quiere mostrarse como disponible a los demas usuarios, se envia la notificación a tópico.
@@ -176,9 +181,8 @@ public class Menu extends AppCompatActivity {
                 // Esto es para la busqueda de un solo documento de la base de datos
                 // El snapshot se ubica en el id del documento del usuario
                 user = snapshot.getValue(User.class);
-                user.setId(currentUser.getUid());
-                nombre = user.getName();
                 Log.i("Info", "El usuario es: " + user.getName()+" "+user.getMail());
+                nombre = user.getName();
                 if(user.isAvailable()){
                     // Mensaje del boton es desconectarse
                     conectarse.setText(textoBoton[1]);

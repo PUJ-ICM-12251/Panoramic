@@ -9,16 +9,20 @@
 
     <Button
         android:id="@+id/editPicture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="281dp"
+        android:layout_height="73dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="65dp"
         android:layout_marginTop="550dp"
+        android:layout_marginEnd="65dp"
         android:backgroundTint="#FF0000"
         android:onClick="edit"
         android:text="Editar perfil"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:icon="@drawable/a3201525"
+        app:icon="@drawable/baseline_account_circle_24"
         app:iconSize="30dp" />
 
     <ImageView
@@ -44,12 +48,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
         android:layout_below="@id/imageView6"
         android:layout_marginStart="110dp"
         android:layout_marginTop="50dp"
-        android:text=" " />
+        android:text="Tu nombre"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -66,11 +70,11 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
         android:layout_below="@id/textView"
         android:layout_marginStart="110dp"
         android:layout_marginTop="50dp"
-        android:text=" " />
+        android:text="Correo"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
 
 </RelativeLayout>
